@@ -422,7 +422,7 @@ document.addEventListener('DOMContentLoaded', function(){
       // Construct mailto URL
       const subject = encodeURIComponent(`Contact from ${name}`);
       const body = encodeURIComponent(`${message}\n\nFrom: ${name}\nEmail: ${email}`);
-      const mailtoLink = `mailto:jayasimhapadigeri8639@gmail.com?subject=${subject}&body=${body}`;
+      const mailtoLink = `mailto:padigerijaya@gmail.com?subject=${subject}&body=${body}`;
       
       // Open email client
       window.location.href = mailtoLink;
