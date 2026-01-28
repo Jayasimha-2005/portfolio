@@ -208,4 +208,18 @@ document.addEventListener('DOMContentLoaded', function(){
     const ro = new ResizeObserver(updateOffset);
     ro.observe(header);
   })();
+
+  /* Projects - Handle Live button clicks for projects without live links */
+  (function projectsLiveButtons(){
+    const liveButtons = document.querySelectorAll('[data-scroll-to-projects]');
+    liveButtons.forEach(btn => {
+      btn.addEventListener('click', function(e){
+        e.preventDefault();
+        const projectsSection = document.getElementById('projects');
+        if(projectsSection){
+          projectsSection.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+  })();
 });

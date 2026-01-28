@@ -14,15 +14,15 @@
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation">
         <span class="hamburger"></span>
       </button>
-      <nav id="primary-navigation" class="nav">
+      <nav id="primary-navigation" class="nav" aria-label="Primary Navigation">
         <ul class="nav-list">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#achievements">Achievements</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="assets/Jayasimha_Padigeri_Resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+          <li><a href="#home" class="nav-link"><span>Home</span></a></li>
+          <li><a href="#about" class="nav-link"><span>About</span></a></li>
+          <li><a href="#skills" class="nav-link"><span>Skills</span></a></li>
+          <li><a href="#projects" class="nav-link"><span>Projects</span></a></li>
+          <li><a href="#achievements" class="nav-link"><span>Achievements</span></a></li>
+          <li><a href="#contact" class="nav-link"><span>Contact</span></a></li>
+          <li><a href="assets/Jayasimha_Padigeri_Resume.pdf" target="_blank" rel="noopener" class="nav-link nav-link-resume"><span>Resume</span></a></li>
         </ul>
       </nav>
     </div>
@@ -30,196 +30,608 @@
 
   <main>
     <!-- Hero / Landing -->
-  <section id="home" class="hero container">
-  <div class="hero-inner">
+    <section id="home" class="hero container">
+      <div class="hero-inner">
+        
+        <!-- Profile Image -->
+        <div class="hero-visual" data-reveal>
+          <div class="hero-image-wrapper">
+            <img src="assets/images/JayaPic.jpeg" alt="Jayasimha Padigeri - Full-Stack Developer" class="hero-image">
+          </div>
+        </div>
 
-    <!-- LEFT CONTENT -->
-    <div class="hero-content">
-      <div class="details-card">
+        <!-- Content -->
+        <div class="hero-content" data-reveal>
+          <!-- Status Badges -->
+          <div class="hero-badges">
+            <span class="status-badge badge-success">✓ Open to Work</span>
+            <span class="status-badge badge-primary">Freelancer</span>
+          </div>
 
-        <p class="eyebrow">
-          Hi — I'm <span class="wave">👋</span>
-        </p>
+          <h1 class="hero-title">
+            <span class="hero-greeting">Hi, I'm</span>
+            <span class="hero-name">Jayasimha</span>
+          </h1>
 
-        <h1 class="hero-name">
-          <span class="hero-name-text"> Jayasimha</span>
-        </h1>
+          <div class="hero-role">
+            <span id="typed" class="typing-text"></span>
+          </div>
 
-        <p class="hero-typing">
-          <span id="typed" class="typing"></span>
-        </p>
-
-        <div class="details-desc">
-          <p>
-            I am a Computer Science student with experience building full-stack
-            applications using modern web technologies. I care about performance,
-            accessibility, and clean code.
+          <p class="hero-description">
+            Computer Science student building full-stack applications with modern web technologies.
+            I focus on creating performant, accessible, and maintainable solutions that solve real-world problems.
           </p>
-        </div>
 
-        <div class="hero-cta">
-          <a href="#contact" class="btn btn-primary">Contact</a>
-          <a href="assets/Jayasimha_Padigeri_Resume.pdf"
-             target="_blank"
-             class="btn btn-ghost">Resume</a>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">
+              <span>Contact Me</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="btn-icon">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a href="assets/Jayasimha_Padigeri_Resume.pdf" target="_blank" rel="noopener" class="btn btn-secondary">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="btn-icon">
+                <path d="M14 10v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2M11 5L8 2 5 5M8 2v9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>Download Resume</span>
+            </a>
+          </div>
         </div>
 
       </div>
-    </div>
+    </section>
 
-    <!-- RIGHT IMAGE -->
-    <div class="hero-visual">
-      <div class="hero-graphic">
-        <img src="assets/images/JayaPic.jpeg" alt="Jayasimha portrait">
+
+    <!-- About Section -->
+    <section id="about" class="section container" data-reveal>
+      <div class="section-header">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle">Building scalable solutions with clean architecture</p>
       </div>
-    </div>
 
-  </div>
-</section>
+      <div class="about-container">
+        <div class="about-content">
+          <div class="about-intro">
+            <h3 class="about-heading">Engineering <span class="highlight">Intelligent Solutions</span> With Modern Technology</h3>
+            <p class="about-lead">
+              I'm a Computer Science student specializing in full-stack development with a strong foundation in modern web technologies. 
+              My journey spans from building production-ready applications to creating scalable systems that combine exceptional user 
+              experience with robust backend architecture.
+            </p>
+          </div>
 
+          <div class="about-description">
+            <p>
+              I focus on creating maintainable, performant solutions using the MERN stack, TypeScript, and modern frontend frameworks. 
+              My approach emphasizes clean code, accessibility standards, and user-centric design principles that deliver measurable impact.
+            </p>
+            <p>
+              Currently seeking internship and full-time opportunities where I can contribute to product development, collaborate with 
+              experienced engineers, and continue growing my skills in building systems that matter.
+            </p>
+          </div>
 
-    <!-- About Me -->
-    <section id="about" class="section container">
-      <h2 class="section-title">About Me</h2>
-      <div class="about-grid">
-        <div>
-          <p>I am a Computer Science student with experience building full-stack applications using modern web technologies. I care about performance, accessibility, and clean code.</p>
-          <p>Currently seeking internship opportunities where I can contribute to product development and grow as an engineer.</p>
+          <!-- Core Competencies -->
+          <div class="about-competencies">
+            <h4 class="competencies-title">Core Competencies</h4>
+            <div class="competencies-grid">
+              <div class="competency-item">
+                <div class="competency-icon">💻</div>
+                <div class="competency-content">
+                  <h5>Tech Stack</h5>
+                  <p>React, Node.js, TypeScript, MongoDB, Express, REST APIs, Git</p>
+                </div>
+              </div>
+              <div class="competency-item">
+                <div class="competency-icon">🎓</div>
+                <div class="competency-content">
+                  <h5>Education</h5>
+                  <p>B.Tech in Computer Science — Expected 2027</p>
+                </div>
+              </div>
+              <div class="competency-item">
+                <div class="competency-icon">🚀</div>
+                <div class="competency-content">
+                  <h5>Specialization</h5>
+                  <p>Full-Stack Development, Web Performance, System Design</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <aside class="about-meta">
-          <ul>
-            <li><strong>Location:</strong> City, Country</li>
-            <li><strong>Education:</strong> B.S. Computer Science</li>
-            <li><strong>Availability:</strong> Open to internships</li>
-          </ul>
+
+        <!-- Contact Info Card -->
+        <aside class="about-sidebar">
+          <div class="contact-card">
+            <div class="contact-info">
+              <div class="contact-item">
+                <svg class="contact-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M10 2C6.13 2 3 5.13 3 9c0 5.25 7 11 7 11s7-5.75 7-11c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
+                </svg>
+                <span>Renigunta, Andhra Pradesh</span>
+              </div>
+              <div class="contact-item">
+                <svg class="contact-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M10 2a6 6 0 100 12 6 6 0 000-12zm0 10a4 4 0 110-8 4 4 0 010 8z" fill="currentColor"/>
+                  <circle cx="10" cy="10" r="1.5" fill="currentColor"/>
+                </svg>
+                <span class="status-text">Open to Opportunities</span>
+              </div>
+            </div>
+            <div class="contact-actions">
+              <a href="#contact" class="btn btn-block btn-primary">Contact Me</a>
+              <a href="assets/Jayasimha_Padigeri_Resume.pdf" target="_blank" rel="noopener" class="btn btn-block btn-outline">Download Resume</a>
+            </div>
+          </div>
+
+          <!-- Social Links -->
+          <div class="social-card">
+            <p class="social-label">Connect with me:</p>
+            <div class="social-links-grid">
+              <a href="https://github.com/" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 .5C5.7.5.7 5.5.7 11.8c0 5 3.3 9.2 7.9 10.7.6.1.8-.2.8-.6v-2.1c-3.2.7-3.8-1.4-3.8-1.4-.6-1.6-1.5-2-1.5-2-1.2-.8.1-.8.1-.8 1.3.1 2 1.4 2 1.4 1.2 2 3.2 1.4 4 .9.1-.7.5-1.4.9-1.7-2.6-.3-5.4-1.3-5.4-5.8 0-1.3.5-2.3 1.3-3.1-.1-.3-.6-1.5.1-3.1 0 0 1-.3 3.2 1.2.9-.3 1.8-.4 2.7-.4s1.8.1 2.7.4c2.2-1.6 3.2-1.2 3.2-1.2.8 1.6.3 2.8.1 3.1.8.8 1.3 1.8 1.3 3.1 0 4.5-2.9 5.5-5.6 5.8.5.5.9 1.4.9 2.8v4.2c0 .4.2.7.8.6 4.6-1.5 7.9-5.7 7.9-10.7C23.3 5.5 18.3.5 12 .5z"/>
+                </svg>
+              </a>
+              <a href="https://linkedin.com/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4v12h-4V8zm7 0h3.8v1.6h.1c.5-.9 1.7-1.9 3.6-1.9 3.8 0 4.5 2.5 4.5 5.8V20h-4v-5.1c0-1.2 0-2.7-1.6-2.7-1.6 0-1.8 1.2-1.8 2.6V20h-4V8z"/>
+                </svg>
+              </a>
+              <a href="mailto:jayasimha@example.com" class="social-link" aria-label="Email">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.89 2 1.99 2H20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5L4 8V6l8 5 8-5v2z"/>
+                </svg>
+              </a>
+              <a href="tel:+1234567890" class="social-link" aria-label="Phone">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M6.6 10.8c1.7 3.6 4.7 6.6 8.3 8.3l2.2-2.2c.3-.3.8-.4 1.2-.3 1.3.3 2.7.5 4 .5.6 0 1 .5 1 1V21c0 .6-.4 1-1 1C10.9 22 2 13.1 2 2c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.7.5 4 .1.4 0 .9-.3 1.2L6.6 10.8z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
         </aside>
       </div>
     </section>
 
-    <!-- Skills -->
+    <!-- Skills Section -->
     <section id="skills" class="section container">
-      <h2 class="section-title">Skills</h2>
+      <h2 class="section-title">Technical Skills</h2>
       <div class="skills-grid">
-        <div class="skill-category">
-          <h3>Frontend</h3>
+        <article class="skill-category" aria-labelledby="frontend-skills">
+          <h3 id="frontend-skills">Frontend Development</h3>
           <ul class="skill-list">
-            <li>HTML5</li>
-            <li>CSS3 / Flexbox / Grid</li>
+            <li>HTML5 & Semantic Markup</li>
+            <li>CSS3, Flexbox & Grid</li>
             <li>JavaScript (ES6+)</li>
-            <li>Accessibility</li>
+            <li>React & Modern Frameworks</li>
+            <li>Responsive Design</li>
+            <li>Web Accessibility (WCAG)</li>
           </ul>
-        </div>
-        <div class="skill-category">
-          <h3>Backend</h3>
+        </article>
+        <article class="skill-category" aria-labelledby="backend-skills">
+          <h3 id="backend-skills">Backend Development</h3>
           <ul class="skill-list">
-            <li>Node.js</li>
-            <li>Express</li>
-            <li>REST APIs</li>
-            <li>Databases (SQL / NoSQL)</li>
+            <li>Node.js & Express</li>
+            <li>REST API Design</li>
+            <li>Authentication & Security</li>
+            <li>Database Design</li>
+            <li>SQL & NoSQL (MongoDB)</li>
+            <li>Server-side Architecture</li>
           </ul>
-        </div>
-        <div class="skill-category">
-          <h3>Tools</h3>
+        </article>
+        <article class="skill-category" aria-labelledby="tools-skills">
+          <h3 id="tools-skills">Tools & Workflow</h3>
           <ul class="skill-list">
-            <li>Git</li>
-            <li>Docker</li>
-            <li>Testing</li>
-            <li>CI/CD</li>
+            <li>Git & Version Control</li>
+            <li>Docker & Containerization</li>
+            <li>Unit & Integration Testing</li>
+            <li>CI/CD Pipelines</li>
+            <li>Performance Optimization</li>
+            <li>Agile Methodologies</li>
           </ul>
-        </div>
+        </article>
       </div>
     </section>
 
-    <!-- Projects -->
-    <section id="projects" class="section container">
-      <h2 class="section-title">Projects</h2>
+    <!-- Projects Section -->
+    <section id="projects" class="section container" data-reveal>
+      <div class="section-header">
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">
+          Production-grade applications spanning HealthTech, academic platforms, and full-stack web solutions.
+        </p>
+      </div>
       <div class="projects-grid">
+        <!-- Featured Project 1: LifeBand Maa -->
         <article class="project-card featured">
-          <div class="card-content">
-            <h3 class="project-title">Featured: Portfolio Website</h3>
-            <p class="project-desc">A minimal, accessible personal portfolio showcasing projects, built with HTML, CSS, and minimal JavaScript.</p>
-            <div class="project-meta">
-              <span class="role">Role: Frontend</span>
-              <div class="badges">
-                <span class="badge">HTML</span>
-                <span class="badge">CSS</span>
-                <span class="badge">JavaScript</span>
-              </div>
+          <div class="project-header">
+            <div class="project-type">
+              <svg class="type-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 6v6l4 2"/>
+              </svg>
+              <span>Startup Project | AI + HealthTech</span>
             </div>
           </div>
-          <div class="card-actions">
-            <a class="btn btn-sm" href="#">Live</a>
-            <a class="btn btn-sm btn-outline" href="#">Code</a>
+          <h3 class="project-title">LifeBand Maa</h3>
+          <p class="project-desc">Maternal health monitoring platform with AI-assisted early risk detection, real-time alerts, and emergency workflows.</p>
+          <div class="project-meta">
+            <div class="project-tags">
+              <span class="tag">React Native</span>
+              <span class="tag">AI/ML</span>
+              <span class="tag">HealthTech</span>
+            </div>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/AdiCoder33/Lifeband_MAA" target="_blank" rel="noopener" class="btn-project btn-github">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 .5C5.7.5.7 5.5.7 11.8c0 5 3.3 9.2 7.9 10.7.6.1.8-.2.8-.6v-2.1c-3.2.7-3.8-1.4-3.8-1.4-.6-1.6-1.5-2-1.5-2-1.2-.8.1-.8.1-.8 1.3.1 2 1.4 2 1.4 1.2 2 3.2 1.4 4 .9.1-.7.5-1.4.9-1.7-2.6-.3-5.4-1.3-5.4-5.8 0-1.3.5-2.3 1.3-3.1-.1-.3-.6-1.5.1-3.1 0 0 1-.3 3.2 1.2.9-.3 1.8-.4 2.7-.4s1.8.1 2.7.4c2.2-1.6 3.2-1.2 3.2-1.2.8 1.6.3 2.8.1 3.1.8.8 1.3 1.8 1.3 3.1 0 4.5-2.9 5.5-5.6 5.8.5.5.9 1.4.9 2.8v4.2c0 .4.2.7.8.6 4.6-1.5 7.9-5.7 7.9-10.7C23.3 5.5 18.3.5 12 .5z"/>
+              </svg>
+              GitHub
+            </a>
+            <button class="btn-project btn-live" data-scroll-to-projects>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15 3 21 3 21 9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+              </svg>
+              Live
+            </button>
           </div>
         </article>
 
-        <article class="project-card">
-          <div class="card-content">
-            <h3 class="project-title">Project Two</h3>
-            <p class="project-desc">Short description that highlights impact and technologies used.</p>
-            <div class="project-meta">
-              <span class="role">Role: Full-Stack</span>
-              <div class="badges">
-                <span class="badge">Node.js</span>
-                <span class="badge">Express</span>
-              </div>
+        <!-- Featured Project 2: Aravind Eye Care -->
+        <article class="project-card featured">
+          <div class="project-header">
+            <div class="project-type">
+              <svg class="type-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <path d="M9 3v18"/>
+              </svg>
+              <span>Mobile Application</span>
             </div>
           </div>
-          <div class="card-actions">
-            <a class="btn btn-sm" href="#">Live</a>
-            <a class="btn btn-sm btn-outline" href="#">Code</a>
+          <h3 class="project-title">Aravind Eye Care – eLogbook App (RetiNotes)</h3>
+          <p class="project-desc">Clinical eLogbook system for ophthalmology workflows with structured case entries, reviews, analytics, and role-based access.</p>
+          <div class="project-meta">
+            <div class="project-tags">
+              <span class="tag">Supabase</span>
+              <span class="tag">Authentication</span>
+              <span class="tag">Analytics</span>
+            </div>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/AdiCoder33/AECi" target="_blank" rel="noopener" class="btn-project btn-github">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 .5C5.7.5.7 5.5.7 11.8c0 5 3.3 9.2 7.9 10.7.6.1.8-.2.8-.6v-2.1c-3.2.7-3.8-1.4-3.8-1.4-.6-1.6-1.5-2-1.5-2-1.2-.8.1-.8.1-.8 1.3.1 2 1.4 2 1.4 1.2 2 3.2 1.4 4 .9.1-.7.5-1.4.9-1.7-2.6-.3-5.4-1.3-5.4-5.8 0-1.3.5-2.3 1.3-3.1-.1-.3-.6-1.5.1-3.1 0 0 1-.3 3.2 1.2.9-.3 1.8-.4 2.7-.4s1.8.1 2.7.4c2.2-1.6 3.2-1.2 3.2-1.2.8 1.6.3 2.8.1 3.1.8.8 1.3 1.8 1.3 3.1 0 4.5-2.9 5.5-5.6 5.8.5.5.9 1.4.9 2.8v4.2c0 .4.2.7.8.6 4.6-1.5 7.9-5.7 7.9-10.7C23.3 5.5 18.3.5 12 .5z"/>
+              </svg>
+              GitHub
+            </a>
+            <button class="btn-project btn-live" data-scroll-to-projects>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15 3 21 3 21 9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+              </svg>
+              Live
+            </button>
           </div>
         </article>
 
+        <!-- Project 3: Portfolio Website -->
         <article class="project-card">
-          <div class="card-content">
-            <h3 class="project-title">Project Three</h3>
-            <p class="project-desc">Short description that highlights impact and technologies used.</p>
-            <div class="project-meta">
-              <span class="role">Role: Backend</span>
-              <div class="badges">
-                <span class="badge">Python</span>
-                <span class="badge">Flask</span>
-              </div>
+          <div class="project-header">
+            <div class="project-type">
+              <svg class="type-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+              <span>Personal Portfolio</span>
             </div>
           </div>
-          <div class="card-actions">
-            <a class="btn btn-sm" href="#">Live</a>
-            <a class="btn btn-sm btn-outline" href="#">Code</a>
+          <h3 class="project-title">Portfolio Website</h3>
+          <p class="project-desc">Modern, responsive personal portfolio with smooth navigation, accessibility, and recruiter-focused UI/UX.</p>
+          <div class="project-meta">
+            <div class="project-tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+            </div>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/Jayasimha-2005/portfolio" target="_blank" rel="noopener" class="btn-project btn-github">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 .5C5.7.5.7 5.5.7 11.8c0 5 3.3 9.2 7.9 10.7.6.1.8-.2.8-.6v-2.1c-3.2.7-3.8-1.4-3.8-1.4-.6-1.6-1.5-2-1.5-2-1.2-.8.1-.8.1-.8 1.3.1 2 1.4 2 1.4 1.2 2 3.2 1.4 4 .9.1-.7.5-1.4.9-1.7-2.6-.3-5.4-1.3-5.4-5.8 0-1.3.5-2.3 1.3-3.1-.1-.3-.6-1.5.1-3.1 0 0 1-.3 3.2 1.2.9-.3 1.8-.4 2.7-.4s1.8.1 2.7.4c2.2-1.6 3.2-1.2 3.2-1.2.8 1.6.3 2.8.1 3.1.8.8 1.3 1.8 1.3 3.1 0 4.5-2.9 5.5-5.6 5.8.5.5.9 1.4.9 2.8v4.2c0 .4.2.7.8.6 4.6-1.5 7.9-5.7 7.9-10.7C23.3 5.5 18.3.5 12 .5z"/>
+              </svg>
+              GitHub
+            </a>
+            <a href="#home" class="btn-project btn-live">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15 3 21 3 21 9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+              </svg>
+              Live
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 4: Farewell Portal -->
+        <article class="project-card">
+          <div class="project-header">
+            <div class="project-type">
+              <svg class="type-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                <line x1="12" y1="22.08" x2="12" y2="12"/>
+              </svg>
+              <span>Full-Stack Web Application</span>
+            </div>
+          </div>
+          <h3 class="project-title">Farewell Portal – Civil Department</h3>
+          <p class="project-desc">Full-stack portal for managing student batches, payments, and summaries with secure authentication and environment-based configuration.</p>
+          <div class="project-meta">
+            <div class="project-tags">
+              <span class="tag">Node.js</span>
+              <span class="tag">Express</span>
+              <span class="tag">Database</span>
+              <span class="tag">Auth</span>
+            </div>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/Jayasimha-2005/Department-of-civil-farewell2K26" target="_blank" rel="noopener" class="btn-project btn-github">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 .5C5.7.5.7 5.5.7 11.8c0 5 3.3 9.2 7.9 10.7.6.1.8-.2.8-.6v-2.1c-3.2.7-3.8-1.4-3.8-1.4-.6-1.6-1.5-2-1.5-2-1.2-.8.1-.8.1-.8 1.3.1 2 1.4 2 1.4 1.2 2 3.2 1.4 4 .9.1-.7.5-1.4.9-1.7-2.6-.3-5.4-1.3-5.4-5.8 0-1.3.5-2.3 1.3-3.1-.1-.3-.6-1.5.1-3.1 0 0 1-.3 3.2 1.2.9-.3 1.8-.4 2.7-.4s1.8.1 2.7.4c2.2-1.6 3.2-1.2 3.2-1.2.8 1.6.3 2.8.1 3.1.8.8 1.3 1.8 1.3 3.1 0 4.5-2.9 5.5-5.6 5.8.5.5.9 1.4.9 2.8v4.2c0 .4.2.7.8.6 4.6-1.5 7.9-5.7 7.9-10.7C23.3 5.5 18.3.5 12 .5z"/>
+              </svg>
+              GitHub
+            </a>
+            <a href="https://civil-farewell-portal.onrender.com/" target="_blank" rel="noopener" class="btn-project btn-live">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15 3 21 3 21 9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+              </svg>
+              Live
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 5: School Management System -->
+        <article class="project-card">
+          <div class="project-header">
+            <div class="project-type">
+              <svg class="type-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+              </svg>
+              <span>Full-Stack Web Platform</span>
+            </div>
+          </div>
+          <h3 class="project-title">School Management System</h3>
+          <p class="project-desc">Role-based school management system for Admin, Teachers, and Parents with attendance tracking and student updates.</p>
+          <div class="project-meta">
+            <div class="project-tags">
+              <span class="tag">MERN Stack</span>
+              <span class="tag">Web Platform</span>
+            </div>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/Jayasimha-2005/SchoolManagementSystem" target="_blank" rel="noopener" class="btn-project btn-github">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 .5C5.7.5.7 5.5.7 11.8c0 5 3.3 9.2 7.9 10.7.6.1.8-.2.8-.6v-2.1c-3.2.7-3.8-1.4-3.8-1.4-.6-1.6-1.5-2-1.5-2-1.2-.8.1-.8.1-.8 1.3.1 2 1.4 2 1.4 1.2 2 3.2 1.4 4 .9.1-.7.5-1.4.9-1.7-2.6-.3-5.4-1.3-5.4-5.8 0-1.3.5-2.3 1.3-3.1-.1-.3-.6-1.5.1-3.1 0 0 1-.3 3.2 1.2.9-.3 1.8-.4 2.7-.4s1.8.1 2.7.4c2.2-1.6 3.2-1.2 3.2-1.2.8 1.6.3 2.8.1 3.1.8.8 1.3 1.8 1.3 3.1 0 4.5-2.9 5.5-5.6 5.8.5.5.9 1.4.9 2.8v4.2c0 .4.2.7.8.6 4.6-1.5 7.9-5.7 7.9-10.7C23.3 5.5 18.3.5 12 .5z"/>
+              </svg>
+              GitHub
+            </a>
+            <a href="https://school-management-system-nine-inky.vercel.app/" target="_blank" rel="noopener" class="btn-project btn-live">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15 3 21 3 21 9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+              </svg>
+              Live
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 6: Project-S (SmartStudy) -->
+        <article class="project-card">
+          <div class="project-header">
+            <div class="project-type">
+              <svg class="type-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+              </svg>
+              <span>Academic Productivity Platform</span>
+            </div>
+          </div>
+          <h3 class="project-title">Project-S (SmartStudy)</h3>
+          <p class="project-desc">Academic assistant platform used by 50+ students for task tracking, timetables, notes, and centralized academic resources.</p>
+          <div class="project-meta">
+            <div class="project-tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+            </div>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/Jayasimha-2005/Project_S" target="_blank" rel="noopener" class="btn-project btn-github">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 .5C5.7.5.7 5.5.7 11.8c0 5 3.3 9.2 7.9 10.7.6.1.8-.2.8-.6v-2.1c-3.2.7-3.8-1.4-3.8-1.4-.6-1.6-1.5-2-1.5-2-1.2-.8.1-.8.1-.8 1.3.1 2 1.4 2 1.4 1.2 2 3.2 1.4 4 .9.1-.7.5-1.4.9-1.7-2.6-.3-5.4-1.3-5.4-5.8 0-1.3.5-2.3 1.3-3.1-.1-.3-.6-1.5.1-3.1 0 0 1-.3 3.2 1.2.9-.3 1.8-.4 2.7-.4s1.8.1 2.7.4c2.2-1.6 3.2-1.2 3.2-1.2.8 1.6.3 2.8.1 3.1.8.8 1.3 1.8 1.3 3.1 0 4.5-2.9 5.5-5.6 5.8.5.5.9 1.4.9 2.8v4.2c0 .4.2.7.8.6 4.6-1.5 7.9-5.7 7.9-10.7C23.3 5.5 18.3.5 12 .5z"/>
+              </svg>
+              GitHub
+            </a>
+            <a href="https://jayasimha-2005.github.io/Project_S/" target="_blank" rel="noopener" class="btn-project btn-live">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15 3 21 3 21 9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+              </svg>
+              Live
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 7: Tele Medicine Platform -->
+        <article class="project-card">
+          <div class="project-header">
+            <div class="project-type">
+              <svg class="type-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+              </svg>
+              <span>HealthTech Web Application</span>
+            </div>
+          </div>
+          <h3 class="project-title">Tele Medicine Platform (Health Reach Punjab)</h3>
+          <p class="project-desc">Telemedicine platform designed to improve healthcare access through digital consultation workflows.</p>
+          <div class="project-meta">
+            <div class="project-tags">
+              <span class="tag">Web Technologies</span>
+              <span class="tag">HealthTech</span>
+            </div>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/Jayasimha-2005/health-reach-punjab" target="_blank" rel="noopener" class="btn-project btn-github">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 .5C5.7.5.7 5.5.7 11.8c0 5 3.3 9.2 7.9 10.7.6.1.8-.2.8-.6v-2.1c-3.2.7-3.8-1.4-3.8-1.4-.6-1.6-1.5-2-1.5-2-1.2-.8.1-.8.1-.8 1.3.1 2 1.4 2 1.4 1.2 2 3.2 1.4 4 .9.1-.7.5-1.4.9-1.7-2.6-.3-5.4-1.3-5.4-5.8 0-1.3.5-2.3 1.3-3.1-.1-.3-.6-1.5.1-3.1 0 0 1-.3 3.2 1.2.9-.3 1.8-.4 2.7-.4s1.8.1 2.7.4c2.2-1.6 3.2-1.2 3.2-1.2.8 1.6.3 2.8.1 3.1.8.8 1.3 1.8 1.3 3.1 0 4.5-2.9 5.5-5.6 5.8.5.5.9 1.4.9 2.8v4.2c0 .4.2.7.8.6 4.6-1.5 7.9-5.7 7.9-10.7C23.3 5.5 18.3.5 12 .5z"/>
+              </svg>
+              GitHub
+            </a>
+            <button class="btn-project btn-live" data-scroll-to-projects>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15 3 21 3 21 9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+              </svg>
+              Live
+            </button>
+          </div>
+        </article>
+
+        <!-- Project 8: Auditorium Management System -->
+        <article class="project-card">
+          <div class="project-header">
+            <div class="project-type">
+              <svg class="type-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                <line x1="12" y1="22.08" x2="12" y2="12"/>
+              </svg>
+              <span>Full-Stack Web Application</span>
+            </div>
+          </div>
+          <h3 class="project-title">Auditorium Management System</h3>
+          <p class="project-desc">A full-stack web application for managing auditorium events, bookings, ticket pricing, and administration with secure backend integration.</p>
+          <div class="project-meta">
+            <div class="project-tags">
+              <span class="tag">Web Technologies</span>
+              <span class="tag">Backend Integration</span>
+            </div>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/Jayasimha-2005/Auditorium-Management-System" target="_blank" rel="noopener" class="btn-project btn-github">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 .5C5.7.5.7 5.5.7 11.8c0 5 3.3 9.2 7.9 10.7.6.1.8-.2.8-.6v-2.1c-3.2.7-3.8-1.4-3.8-1.4-.6-1.6-1.5-2-1.5-2-1.2-.8.1-.8.1-.8 1.3.1 2 1.4 2 1.4 1.2 2 3.2 1.4 4 .9.1-.7.5-1.4.9-1.7-2.6-.3-5.4-1.3-5.4-5.8 0-1.3.5-2.3 1.3-3.1-.1-.3-.6-1.5.1-3.1 0 0 1-.3 3.2 1.2.9-.3 1.8-.4 2.7-.4s1.8.1 2.7.4c2.2-1.6 3.2-1.2 3.2-1.2.8 1.6.3 2.8.1 3.1.8.8 1.3 1.8 1.3 3.1 0 4.5-2.9 5.5-5.6 5.8.5.5.9 1.4.9 2.8v4.2c0 .4.2.7.8.6 4.6-1.5 7.9-5.7 7.9-10.7C23.3 5.5 18.3.5 12 .5z"/>
+              </svg>
+              GitHub
+            </a>
+            <a href="https://auditorium-management-system.vercel.app/" target="_blank" rel="noopener" class="btn-project btn-live">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15 3 21 3 21 9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+              </svg>
+              Live
+            </a>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- Achievements -->
+    <!-- Achievements Section -->
     <section id="achievements" class="section container">
-      <h2 class="section-title">Achievements</h2>
-      <ul class="achievements-list">
-        <li>Dean's List — 2024</li>
-        <li>1st Place — University Hackathon</li>
-        <li>Open Source Contributor — Project XYZ</li>
+      <h2 class="section-title">Achievements & Recognition</h2>
+      <p class="section-subtitle">Hackathon wins, project recognition, and competitive achievements</p>
+      <ul class="achievements-list" role="list">
+        <li class="achievement-item">
+          <span class="achievement-icon" aria-hidden="true">🏆</span>
+          <div class="achievement-content">
+            <h3 class="achievement-title">Hack The Flame Hackathon – Winner</h3>
+            <p class="achievement-desc">Won 1st Place at a national-level hackathon held in Mumbai, conducted by Ignite Rooms; recognized for innovation and end-to-end execution.</p>
+          </div>
+        </li>
+        <li class="achievement-item">
+          <span class="achievement-icon" aria-hidden="true">🥇</span>
+          <div class="achievement-content">
+            <h3 class="achievement-title">Techzite 2.0 Hackathon – Winner</h3>
+            <p class="achievement-desc">Won 1st Place at TECHZITE 2.0 in Nuzvid, competing against teams from multiple colleges; recognized for high-impact innovation.</p>
+          </div>
+        </li>
+        <li class="achievement-item">
+          <span class="achievement-icon" aria-hidden="true">⭐</span>
+          <div class="achievement-content">
+            <h3 class="achievement-title">Everest Engineering Hackathon – Top 10</h3>
+            <p class="achievement-desc">Placed in the Top 10 among 100+ teams; gained strong hands-on learning through rapid prototyping and iterative problem-solving.</p>
+          </div>
+        </li>
+        <li class="achievement-item">
+          <span class="achievement-icon" aria-hidden="true">💡</span>
+          <div class="achievement-content">
+            <h3 class="achievement-title">Project Recognition – LifeBand Maa</h3>
+            <p class="achievement-desc">Project shortlisted at PitchTank, Hack the Flame, Techzite, and EVEREST Engineering for healthcare impact.</p>
+          </div>
+        </li>
+        <li class="achievement-item">
+          <span class="achievement-icon" aria-hidden="true">🥈</span>
+          <div class="achievement-content">
+            <h3 class="achievement-title">Vasista 2K24 – Runner Up</h3>
+            <p class="achievement-desc">Secured 2nd Prize for the Event Management System.</p>
+          </div>
+        </li>
+        <li class="achievement-item">
+          <span class="achievement-icon" aria-hidden="true">🚀</span>
+          <div class="achievement-content">
+            <h3 class="achievement-title">Blueprint 6.0 – Shortlisted</h3>
+            <p class="achievement-desc">Startup idea shortlisted for Blueprint 6.0.</p>
+          </div>
+        </li>
+        <li class="achievement-item">
+          <span class="achievement-icon" aria-hidden="true">🌙</span>
+          <div class="achievement-content">
+            <h3 class="achievement-title">Moonshot 6.0 – Shortlisted</h3>
+            <p class="achievement-desc">Startup idea shortlisted for Moonshot 6.0.</p>
+          </div>
+        </li>
       </ul>
     </section>
 
-    <!-- Contact -->
+    <!-- Contact Section -->
     <section id="contact" class="section container">
-      <h2 class="section-title">Contact</h2>
-      <p>I'm open to internship opportunities and collaborations. Reach out via email or LinkedIn.</p>
-      <form class="contact-form" action="#" method="post" novalidate>
-        <div class="form-grid">
-          <label for="name">Name</label>
-          <input id="name" name="name" type="text" required>
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="section-subtitle">I'm open to internship opportunities and collaborations. Feel free to reach out!</p>
+      
+      <div class="contact-wrapper">
+        <form class="contact-form" action="#" method="post" novalidate aria-label="Contact Form">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name">Name <span class="required" aria-label="required">*</span></label>
+              <input id="name" name="name" type="text" required aria-required="true" placeholder="Your name">
+            </div>
 
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" required>
+            <div class="form-group">
+              <label for="email">Email <span class="required" aria-label="required">*</span></label>
+              <input id="email" name="email" type="email" required aria-required="true" placeholder="your.email@example.com">
+            </div>
 
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
-        </div>
-        <div class="form-actions">
-          <button class="btn btn-primary" type="submit">Send Message</button>
-        </div>
-      </form>
+            <div class="form-group form-group-full">
+              <label for="message">Message <span class="required" aria-label="required">*</span></label>
+              <textarea id="message" name="message" rows="6" required aria-required="true" placeholder="Tell me about your project or opportunity..."></textarea>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit">Send Message</button>
+          </div>
+        </form>
+      </div>
 
       <hr class="divider">
       <div class="connect-row">
