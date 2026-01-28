@@ -2,10 +2,6 @@
 // Minimal, purposeful JavaScript for navbar toggle, smooth scrolling, and reveal-on-scroll
 
 document.addEventListener('DOMContentLoaded', function(){
-  // set current year in footer
-  const yearEl = document.getElementById('year');
-  if(yearEl) yearEl.textContent = new Date().getFullYear();
-
   // Mobile nav toggle
   const navToggle = document.querySelector('.nav-toggle');
   const nav = document.getElementById('primary-navigation');
@@ -399,4 +395,42 @@ document.addEventListener('DOMContentLoaded', function(){
     createDots();
     updateCarousel(false);
   })();
+
+  // Contact form submission handler
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      
+      // Validate all required fields
+      if (!name || !email || !message) {
+        alert('Please fill in all required fields.');
+        return;
+      }
+      
+      // Validate email format
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        alert('Please enter a valid email address.');
+        return;
+      }
+      
+      // Construct mailto URL
+      const subject = encodeURIComponent(`Contact from ${name}`);
+      const body = encodeURIComponent(`${message}\n\nFrom: ${name}\nEmail: ${email}`);
+      const mailtoLink = `mailto:jayasimhapadigeri8639@gmail.com?subject=${subject}&body=${body}`;
+      
+      // Open email client
+      window.location.href = mailtoLink;
+      
+      // Optional: Reset form after submission
+      setTimeout(() => {
+        contactForm.reset();
+      }, 500);
+    });
+  }
 });
