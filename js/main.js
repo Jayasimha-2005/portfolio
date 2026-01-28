@@ -222,4 +222,181 @@ document.addEventListener('DOMContentLoaded', function(){
       });
     });
   })();
+
+  /* Achievements Carousel */
+  (function achievementsCarousel(){
+    const track = document.getElementById('achievementsTrack');
+    const prevBtn = document.getElementById('achievementsPrev');
+    const nextBtn = document.getElementById('achievementsNext');
+    const dotsContainer = document.getElementById('achievementsDots');
+    
+    if(!track || !prevBtn || !nextBtn || !dotsContainer) return;
+    
+    const cards = Array.from(track.children);
+    const totalCards = cards.length;
+    let currentIndex = 0;
+    let cardsPerView = 3;
+    
+    // Determine cards per view based on screen size
+    function updateCardsPerView(){
+      const width = window.innerWidth;
+      if(width <= 700){
+        cardsPerView = 1;
+      } else if(width <= 900){
+        cardsPerView = 2;
+      } else {
+        cardsPerView = 3;
+      }
+    }
+    
+    // Calculate total pages
+    function getTotalPages(){
+      return Math.ceil(totalCards / cardsPerView);
+    }
+    
+    // Create pagination dots
+    function createDots(){
+      dotsContainer.innerHTML = '';
+      const totalPages = getTotalPages();
+      for(let i = 0; i < totalPages; i++){
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot';
+        dot.setAttribute('role', 'tab');
+        dot.setAttribute('aria-label', `Go to achievement page ${i + 1}`);
+        dot.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+        if(i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToPage(i));
+        dotsContainer.appendChild(dot);
+      }
+    }
+    
+    // Update carousel position
+    function updateCarousel(animate = true){
+      const cardWidth = cards[0].offsetWidth;
+      const gap = 24;
+      const offset = currentIndex * (cardWidth + gap);
+      
+      if(!animate){
+        track.style.transition = 'none';
+      }
+      track.style.transform = `translateX(-${offset}px)`;
+      
+      if(!animate){
+        requestAnimationFrame(() => {
+          track.style.transition = '';
+        });
+      }
+      
+      updateControls();
+    }
+    
+    // Update button states and dots
+    function updateControls(){
+      const totalPages = getTotalPages();
+      const currentPage = Math.floor(currentIndex / cardsPerView);
+      
+      // Update buttons
+      prevBtn.disabled = currentIndex === 0;
+      nextBtn.disabled = currentIndex >= totalCards - cardsPerView;
+      
+      // Update dots
+      const dots = dotsContainer.querySelectorAll('.carousel-dot');
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentPage);
+        dot.setAttribute('aria-selected', index === currentPage ? 'true' : 'false');
+      });
+    }
+    
+    // Navigate to specific page
+    function goToPage(pageIndex){
+      currentIndex = pageIndex * cardsPerView;
+      if(currentIndex > totalCards - cardsPerView){
+        currentIndex = totalCards - cardsPerView;
+      }
+      if(currentIndex < 0) currentIndex = 0;
+      updateCarousel();
+    }
+    
+    // Previous button handler
+    prevBtn.addEventListener('click', () => {
+      if(currentIndex > 0){
+        currentIndex -= 1;
+        if(currentIndex < 0) currentIndex = 0;
+        updateCarousel();
+      }
+    });
+    
+    // Next button handler
+    nextBtn.addEventListener('click', () => {
+      if(currentIndex < totalCards - cardsPerView){
+        currentIndex += 1;
+        if(currentIndex > totalCards - cardsPerView){
+          currentIndex = totalCards - cardsPerView;
+        }
+        updateCarousel();
+      }
+    });
+    
+    // Keyboard navigation
+    track.addEventListener('keydown', (e) => {
+      if(e.key === 'ArrowLeft'){
+        e.preventDefault();
+        prevBtn.click();
+      } else if(e.key === 'ArrowRight'){
+        e.preventDefault();
+        nextBtn.click();
+      }
+    });
+    
+    // Touch/swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    track.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, {passive: true});
+    
+    track.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, {passive: true});
+    
+    function handleSwipe(){
+      const swipeThreshold = 50;
+      const diff = touchStartX - touchEndX;
+      
+      if(Math.abs(diff) > swipeThreshold){
+        if(diff > 0){
+          // Swipe left - next
+          nextBtn.click();
+        } else {
+          // Swipe right - previous
+          prevBtn.click();
+        }
+      }
+    }
+    
+    // Handle window resize
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        const oldCardsPerView = cardsPerView;
+        updateCardsPerView();
+        
+        if(oldCardsPerView !== cardsPerView){
+          currentIndex = 0;
+          createDots();
+          updateCarousel(false);
+        } else {
+          updateCarousel(false);
+        }
+      }, 250);
+    });
+    
+    // Initialize
+    updateCardsPerView();
+    createDots();
+    updateCarousel(false);
+  })();
 });
