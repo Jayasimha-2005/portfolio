@@ -2,10 +2,47 @@
 // Minimal, purposeful JavaScript for navbar toggle, smooth scrolling, and reveal-on-scroll
 
 document.addEventListener('DOMContentLoaded', function(){
-  // Mobile nav toggle
+  // Launch overlay handler
+  const launchOverlay = document.getElementById('launchOverlay');
+  if (launchOverlay) {
+    // Start fade-out after 2.8 seconds
+    setTimeout(() => {
+      launchOverlay.classList.add('fade-out');
+      
+      // Remove overlay completely after animation ends
+      setTimeout(() => {
+        launchOverlay.remove();
+      }, 1000); // Match fadeOut animation duration
+    }, 2800);
+  }
+
+  // More dropdown toggle
+  const moreBtn = document.querySelector('.nav-more-btn');
+  const moreItem = document.querySelector('.nav-item-more');
+  if (moreBtn && moreItem) {
+    moreBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      const isActive = moreItem.classList.contains('active');
+      moreItem.classList.toggle('active', !isActive);
+      this.setAttribute('aria-expanded', !isActive);
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!moreItem.contains(e.target)) {
+        moreItem.classList.remove('active');
+        moreBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  // Mobile nav toggle - DISABLED (using always-visible navbar instead)
+  // Hamburger drawer logic commented out - not needed
+  /*
   const navToggle = document.querySelector('.nav-toggle');
   const nav = document.getElementById('primary-navigation');
-  if(navToggle && nav){
+  if(navToggle && nav && window.innerWidth > 768){
     navToggle.addEventListener('click', function(){
       const expanded = this.getAttribute('aria-expanded') === 'true' || false;
       const isOpen = !expanded;
@@ -48,6 +85,7 @@ document.addEventListener('DOMContentLoaded', function(){
       }
     });
   }
+  */
 
   // Close nav with Escape key when open
   document.addEventListener('keydown', (e) => {
