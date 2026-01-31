@@ -471,4 +471,94 @@ document.addEventListener('DOMContentLoaded', function(){
       }, 500);
     });
   }
+
+  // ==========================================
+  // Private Repository Handler
+  // ==========================================
+  // Handle clicks on GitHub buttons for private repositories
+  const privateRepoButtons = document.querySelectorAll('.btn-github[data-private="true"]');
+  
+  privateRepoButtons.forEach(button => {
+    button.addEventListener('click', function(e) {
+      e.preventDefault(); // Prevent navigation to GitHub
+      
+      const btnText = this.querySelector('.btn-text');
+      if (!btnText) return;
+      
+      // Store original text
+      const originalText = btnText.textContent;
+      const originalAriaLabel = this.getAttribute('aria-label');
+      
+      // Check if already showing private message (prevent double-clicks)
+      if (btnText.textContent.includes('Private')) return;
+      
+      // Add shake animation
+      this.classList.add('shake-animation');
+      
+      // Update button text and aria-label
+      btnText.textContent = '🔒 Private Repository';
+      this.setAttribute('aria-label', 'Private repository - access restricted');
+      
+      // Revert after 2 seconds
+      setTimeout(() => {
+        btnText.textContent = originalText;
+        this.setAttribute('aria-label', originalAriaLabel);
+        this.classList.remove('shake-animation');
+      }, 2000);
+    });
+  });
+
+  // ==========================================
+  // Enhanced Live Button Handler
+  // ==========================================
+  // Handle clicks on Live buttons with custom status messages
+  const statusLiveButtons = document.querySelectorAll('.btn-live[data-live-status]');
+  
+  statusLiveButtons.forEach(button => {
+    button.addEventListener('click', function(e) {
+      e.preventDefault(); // Prevent any default behavior
+      
+      const btnText = this.querySelector('.btn-text');
+      if (!btnText) return;
+      
+      // Get custom message from data attribute
+      const customMessage = this.getAttribute('data-message') || 'Coming Soon';
+      const originalText = btnText.textContent;
+      const originalAriaLabel = this.getAttribute('aria-label');
+      
+      // Check if already showing message (prevent rapid clicks)
+      if (this.classList.contains('btn-showing-message')) return;
+      
+      // Mark button as showing message
+      this.classList.add('btn-showing-message');
+      
+      // Add visual feedback class
+      this.classList.add('btn-status-feedback');
+      
+      // Update button text
+      btnText.textContent = customMessage;
+      
+      // Update aria-label for accessibility
+      this.setAttribute('aria-label', customMessage);
+      
+      // Add aria-live for screen readers
+      const liveRegion = this.querySelector('.btn-text');
+      if (liveRegion) {
+        liveRegion.setAttribute('aria-live', 'polite');
+      }
+      
+      // Revert after 2.5 seconds
+      setTimeout(() => {
+        btnText.textContent = originalText;
+        this.setAttribute('aria-label', originalAriaLabel);
+        this.classList.remove('btn-status-feedback');
+        this.classList.remove('btn-showing-message');
+        
+        // Remove aria-live
+        if (liveRegion) {
+          liveRegion.removeAttribute('aria-live');
+        }
+      }, 2500);
+    });
+  });
 });

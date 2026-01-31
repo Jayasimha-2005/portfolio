@@ -1295,6 +1295,24 @@ a {
   transform: translateX(2px);
 }
 
+/* Enhanced Live Button Feedback States */
+.btn-status-feedback {
+  opacity: 0.7;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.btn-status-feedback .btn-text {
+  font-size: 0.8rem;
+  transition: font-size 0.2s ease;
+}
+
+/* Prevent hover effects when showing status message */
+.btn-status-feedback:hover {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(124, 92, 255, 0.3);
+}
+
 /* Legacy styles - keeping for backward compatibility */
 .project-card h3 {
   font-size: 1.5rem;
@@ -1780,6 +1798,17 @@ a {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Shake animation for private repository buttons */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
+  20%, 40%, 60%, 80% { transform: translateX(4px); }
+}
+
+.shake-animation {
+  animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
 }
 
 /* === STATUS BADGES === */
