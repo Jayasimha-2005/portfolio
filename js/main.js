@@ -37,55 +37,53 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   }
 
-  // Mobile nav toggle - DISABLED (using always-visible navbar instead)
-  // Hamburger drawer logic commented out - not needed
-  /*
+  
+  // Mobile nav toggle
   const navToggle = document.querySelector('.nav-toggle');
   const nav = document.getElementById('primary-navigation');
-  if(navToggle && nav && window.innerWidth > 768){
-    navToggle.addEventListener('click', function(){
-      const expanded = this.getAttribute('aria-expanded') === 'true' || false;
+  
+  if (navToggle && nav) {
+    navToggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const expanded = this.getAttribute('aria-expanded') === 'true';
       const isOpen = !expanded;
+      
       this.setAttribute('aria-expanded', isOpen);
       nav.classList.toggle('open', isOpen);
-
-      // show/hide nav list (CSS handles layout when .open is present)
-      const navList = nav.querySelector('.nav-list');
-      if(navList){
-        navList.style.display = isOpen ? 'flex' : 'none';
-      }
-
-      // toggle page lock and overlay for drawer experience
       document.body.classList.toggle('nav-open', isOpen);
-      if(isOpen){
-        // create overlay if not present
+      
+      if (isOpen) {
         let overlay = document.querySelector('.nav-overlay');
-        if(!overlay){
+        if (!overlay) {
           overlay = document.createElement('div');
           overlay.className = 'nav-overlay';
           document.body.appendChild(overlay);
-          // allow click on overlay to close nav
+          
           overlay.addEventListener('click', () => {
-            navToggle.setAttribute('aria-expanded', 'false');
-            nav.classList.remove('open');
-            if(navList) navList.style.display = 'none';
-            document.body.classList.remove('nav-open');
-            overlay.classList.remove('visible');
-            setTimeout(() => overlay.remove(), 260);
+            navToggle.click(); // Trigger close
           });
         }
-        // animate overlay visible
         requestAnimationFrame(() => overlay.classList.add('visible'));
       } else {
         const overlay = document.querySelector('.nav-overlay');
-        if(overlay){
+        if (overlay) {
           overlay.classList.remove('visible');
-          setTimeout(() => overlay.remove(), 260);
+          setTimeout(() => overlay.remove(), 400);
         }
       }
     });
+    
+    // Close nav when clicking a link
+    const navLinks = nav.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (nav.classList.contains('open')) {
+          navToggle.click();
+        }
+      });
+    });
   }
-  */
+
 
   // Close nav with Escape key when open
   document.addEventListener('keydown', (e) => {
@@ -559,6 +557,20 @@ document.addEventListener('DOMContentLoaded', function(){
           liveRegion.removeAttribute('aria-live');
         }
       }, 2500);
+    });
+  });
+});
+
+// Skills Accordion
+document.addEventListener('DOMContentLoaded', () => {
+  const skillCards = document.querySelectorAll('.skill-card');
+  
+  skillCards.forEach(card => {
+    card.addEventListener('click', () => {
+      // Remove active class from all
+      skillCards.forEach(c => c.classList.remove('active'));
+      // Add active to clicked
+      card.classList.add('active');
     });
   });
 });
