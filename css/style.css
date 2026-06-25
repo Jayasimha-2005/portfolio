@@ -2384,44 +2384,6 @@ a {
     min-height: 80px;
   }
 
-  .nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(11, 15, 19, 0.98);
-    backdrop-filter: blur(20px);
-    display: none;
-    padding: 80px 20px;
-    border-radius: 0;
-    z-index: 998;
-  }
-
-  .nav.active {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .nav-list {
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
-    max-width: 300px;
-  }
-
-  .nav-link {
-    width: 100%;
-    justify-content: center;
-    padding: 1rem;
-    font-size: 1.125rem;
-  }
-
-  .nav-toggle {
-    display: block;
-    z-index: 999;
-  }
 
   /* Hero Section */
   .hero {
@@ -3468,18 +3430,18 @@ main section {
   .nav {
     position: fixed;
     top: 0;
-    right: -100%; /* Hidden by default off-screen to the right */
+    right: -100%;
     bottom: 0;
-    width: 280px;
-    background: rgba(15, 23, 42, 0.98);
-    backdrop-filter: blur(20px);
+    width: 320px;
+    height: 100vh !important;
+    background: #ffffff !important;
     display: flex;
     flex-direction: column;
-    padding: 80px 24px;
-    border-radius: 0;
+    padding: 100px 30px;
+    border-radius: 20px 0 0 20px !important;
     transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 998;
-    border-left: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.15);
   }
 
   .nav.open {
@@ -3488,20 +3450,47 @@ main section {
 
   .nav-list {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2rem;
     width: 100%;
   }
 
   .nav-link {
     width: 100%;
     justify-content: flex-start;
-    padding: 0.5rem 1rem;
-    font-size: 1.1rem;
+    padding: 0;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: #333333;
   }
-  
-  /* Close icon for mobile menu */
+
+  .nav-link:hover, .nav-link.active {
+    color: #2563eb;
+    background: transparent;
+  }
+
+  /* Close icon for mobile menu - styled like the reference 'X' box */
+  .nav-toggle[aria-expanded="true"] {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .nav-toggle[aria-expanded="true"] .hamburger {
     background: transparent;
+  }
+  .nav-toggle[aria-expanded="true"] .hamburger::before,
+  .nav-toggle[aria-expanded="true"] .hamburger::after {
+    background: #4b5563;
+    width: 20px;
+    left: 2px;
   }
   .nav-toggle[aria-expanded="true"] .hamburger::before {
     transform: rotate(45deg);
