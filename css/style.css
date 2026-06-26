@@ -3429,12 +3429,12 @@ main section {
 
   .nav {
     position: fixed;
-    top: 0;
+    top: 1vh;
     right: -100%;
-    bottom: 0;
-    width: 320px;
-    height: 100vh !important;
-    background: #ffffff !important;
+    bottom: 1vh;
+    width: 190px;
+    height: 98vh !important;
+    background: #cacce2 !important;
     display: flex;
     flex-direction: column;
     padding: 100px 30px;

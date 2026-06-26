@@ -91,8 +91,7 @@ document.addEventListener('DOMContentLoaded', function(){
       const overlay = document.querySelector('.nav-overlay');
       if(nav.classList.contains('open')){
         nav.classList.remove('open');
-        const navList = nav.querySelector('.nav-list');
-        if(navList) navList.style.display = 'none';
+        // Removed display: none to prevent links disappearing
         document.body.classList.remove('nav-open');
         if(overlay){ overlay.classList.remove('visible'); setTimeout(() => overlay.remove(), 260); }
         const navToggleBtn = document.querySelector('.nav-toggle');
@@ -112,8 +111,7 @@ document.addEventListener('DOMContentLoaded', function(){
           target.scrollIntoView({behavior:'smooth',block:'start'});
           // close mobile nav after click
           if(window.innerWidth <= 900){
-            const navList = document.querySelector('#primary-navigation .nav-list');
-            if(navList) navList.style.display = 'none';
+            // Removed display: none to prevent links disappearing
             if(navToggle) navToggle.setAttribute('aria-expanded', 'false');
           }
         }
